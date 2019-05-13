@@ -8,7 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@types/aws-lambda": "^8.10.25",
+    "aws-lambda": "^0.1.2",
     "core-js": "^2.6.5",
+    "netlify-lambda": "^1.4.7",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
