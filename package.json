@@ -4,13 +4,17 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "serve:lambda": "netlify-lambda serve src/lambda",
     "build": "vue-cli-service build",
+    "build:lambda": "netlify-lambda build src/lambda",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.25",
     "aws-lambda": "^0.1.2",
+    "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "http-proxy-middleware": "^0.19.1",
     "netlify-lambda": "^1.4.7",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
