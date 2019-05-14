@@ -3,10 +3,6 @@
   functions = "src/lambda/"
   publish = "dist"
 
-[[redirects]]
-  from = "/*"
-  to = "/:splat"
-
 
 # COMMENT: This a rule for Single Page Applications
 [[redirects]]
