@@ -1,7 +1,8 @@
 {
   "defaultSeverity": "warning",
   "extends": [
-    "tslint:recommended"
+    "tslint:recommended",
+    "tslint-config-prettier"
   ],
   "linterOptions": {
     "exclude": [
@@ -14,6 +15,12 @@
     "interface-name": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
+    "max-line-length": false,
+    "member-access": false,
+    "no-console": [true, "warning"],
+    "no-require-imports": false,
+    "no-var-requires": false,
+    "import-blacklist":true,
     "no-consecutive-blank-lines": false
   }
 }

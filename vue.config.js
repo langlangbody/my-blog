@@ -1,3 +1,8 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin
+const CompressionPlugin = require('compression-webpack-plugin')
+const BrotliPlugin = require('brotli-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 // vue.config.js
 module.exports = {
     publicPath: '/',
@@ -41,10 +46,45 @@ module.exports = {
 
         config.resolve.symlinks(true)
 
+        config.module
+            .rule('html')
+            .test(/\.(html)$/)
+            .use('html-loader')
+            .loader('html-loader')
+
         return config
     },
 
     configureWebpack: config => {
+        if (process.env.NODE_ENV === 'production') {
+            return {
+                devtool: 'source-map',
+                plugins: [
+                    new CompressionPlugin(),
+                    new BrotliPlugin(),
+                    new BundleAnalyzerPlugin({
+                        analyzerMode: 'static'
+                    }),
+                    new TerserPlugin({
+                        cache: true,
+                        parallel: true,
+                        sourceMap: true, // Must be set to true if using source-maps in production
+                        terserOptions: {
+                            compress: {
+                                drop_console: true,
+                                drop_debugger: true
+                            }
+                        }
+                    })
+                ]
+            }
+        }
+        return {
+            devtool: 'source-map',
+            plugins: [
+                new BundleAnalyzerPlugin()
+            ]
+        }
     },
 
     // generate sourceMap for production build?
@@ -58,32 +98,48 @@ module.exports = {
 
     // PWA插件的选项。
     // see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
+    pwa: {
+        name: '眼健康管理系统'
+    },
 
     // 配置WebPACK DEV服务器行为
     devServer: {
         open: process.platform === 'darwin',
-        host: '0.0.0.0', // 127.0.0.1
         hot: true,
-        port: 8080,
+        port: 4200
         // https: false,
         // hotOnly: false,
         // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#configuring-proxy
-        proxy: {
-          '/': {
-            target: 'http://0.0.0.0:9000',
-            ws: true,
-            pathRewrite: {
-              "^/\\.netlify/functions": "" //用'/api' 代替 'http://218.78.187.216/api/v1'
-            },
-            changeOrigin: true
-          }
-        }, // string | Object
-        before: app => { }
+        // proxy: {
+        //   '/helloaeye': {
+        //     target: 'http://0.0.0.0:3000/helloaeye',
+        //     ws: true,
+        //     pathRewrite: {
+        //       "^/helloaeye": "" //用'/api' 代替 'http://218.78.187.216/api/v1'
+        //     },
+        //     changeOrigin: true
+        //   }
+        // }, // string | Object
+        // before: app => { }
     },
 
     css: undefined,
 
     // 第三方插件
-    pluginOptions: {}
+    pluginOptions: {
+      prerenderSpa: {
+        registry: undefined,
+        renderRoutes: [
+          '/'
+        ],
+        useRenderEvent: true,
+        headless: true,
+        onlyProduction: true
+      }
+    },
 
+    publicPath: undefined,
+    outputDir: undefined,
+    assetsDir: undefined,
+    runtimeCompiler: undefined
 }

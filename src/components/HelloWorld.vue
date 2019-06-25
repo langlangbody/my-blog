@@ -28,7 +28,8 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
-    <div class="menuclick" @click="handleClick">点我加载数据</div>
+    <div class="menuclick" @click="handleClick('hello')">点我加载数据</div>
+    <div class="ment" @click="handleClick('async-dadjoke')"> axios </div>
   </div>
 </template>
 
@@ -40,8 +41,8 @@ import axios from 'axios';
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 
-  handleClick() {
-    axios.get("/.netlify/functions/hello").then(res=>{
+  handleClick(str:string) {
+    axios.get(`/.netlify/functions/${str}`).then(res=>{
       console.log('无服务',res);
     }).catch(err=>{
       console.error('err',err);
