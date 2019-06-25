@@ -12,7 +12,11 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "node",
+      "webpack-env",
+      "jest",
+      "mocha",
+      "chai"
     ],
     "paths": {
       "@/*": [
@@ -31,7 +35,9 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/setupProxy.ts", "src/lambda/hello.js"
+    "tests/**/*.tsx",
+    "src/utils/downer.ts",
+    "src/utils/script.js"
   ],
   "exclude": [
     "node_modules"
