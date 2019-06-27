@@ -39,6 +39,8 @@ import axios from 'axios';
 
 @Component
 export default class HelloWorld extends Vue {
+  private name = 'HelloWorld'
+
   @Prop() private msg!: string;
 
   handleClick(str:string) {

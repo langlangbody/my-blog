@@ -1,12 +1,10 @@
 const proxy = require('http-proxy-middleware');
 
-const demo:any = (app:any)=> {
+export const demo:any = (app:any)=> {
   app.use(proxy('/.netlify/functions/', { 
-    target: 'http://localhost:8080/',
+    target: 'http://localhost:5800/',
     "pathRewrite": {
       "^/\\.netlify/functions": ""
     }
   }));
 };
-
-export default demo

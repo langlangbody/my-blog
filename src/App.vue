@@ -1,38 +1,46 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn flat href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank">
-        <span class="mr-2">Latest Release</span>
-        <v-icon>open_in_new</v-icon>
-      </v-btn>
-    </v-toolbar>
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+  <a-locale-provider :locale="zh_CN">
+    <div id="app">
+      <img src="./assets/logo.png">
+      <div>
+        <p>
+          If Ant-Design-Vue is successfully added to this project, you'll see an
+          <code v-text="'<a-button>'"></code>
+          <code v-text="'<a-pagination>'"></code>
+          below
+        </p>
+        <a-button type="primary">Primary</a-button>
+        <a-pagination size="small" :total="50" showSizeChanger showQuickJumper />
+      </div>
+      <HelloWorld msg="Welcome to Your Vue.js App"/>
+    </div>
+  </a-locale-provider>
 </template>
 
-<style lang="scss">
+<script>
+import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN'
+import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  name: 'app',
+  data() {
+    return {
+      zh_CN,
+    }
+  },
+  components: {
+    HelloWorld
+  }
+}
+</script>
+
+<style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  margin-top: 60px;
 }
 </style>
