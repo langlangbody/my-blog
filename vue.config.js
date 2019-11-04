@@ -2,6 +2,9 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 const CompressionPlugin = require("compression-webpack-plugin");
 const BrotliPlugin = require("brotli-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+
+
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 // vue.config.js
 module.exports = {
   publicPath: "/",
@@ -61,6 +64,7 @@ module.exports = {
         plugins: [
           new CompressionPlugin(),
           new BrotliPlugin(),
+          new VuetifyLoaderPlugin(),
           //   new BundleAnalyzerPlugin({
           //     analyzerMode: "static",
           //     analyzerPort: 5800
@@ -80,8 +84,8 @@ module.exports = {
       };
     }
     return {
-      devtool: "source-map"
-      //   plugins: [new BundleAnalyzerPlugin({ analyzerPort: 5800 })]
+      devtool: "source-map",
+      plugins: [new VuetifyLoaderPlugin()]
     };
   },
 
