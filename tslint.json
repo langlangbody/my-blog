@@ -1,58 +1,12 @@
 {
-  "defaultSeverity": "warning",
-  "extends": ["tslint:recommended", "tslint-config-prettier"],
-  "linterOptions": {
-    "exclude": ["node_modules/**"]
-  },
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
+  "extends": [
+    "tslint-config-blvd/react",
+    "tslint-config-prettier"
+  ],
   "rules": {
-    "quotemark": [true, "single"],
-    "indent": [true, "spaces", 2],
-    "interface-name": false,
-    "ordered-imports": false,
-    "object-literal-sort-keys": false,
-    "prefer-object-spread": true,
-    "max-line-length": false,
-    "member-access": false,
-    "no-console": [true, "warning"],
-    "no-default-export": false,
-    "no-implicit-dependencies": [true, "dev", ["@", "@vue"]],
-    "no-submodule-imports": [true, "@", "@vue"],
-    "import-blacklist": true,
-    "only-arrow-functions": false,
-    "no-redundant-jsdoc": true,
-    "no-var-requires": false,
-    "no-shadowed-variable": [
-      true,
-      {
-        "class": true,
-        "enum": true,
-        "function": false,
-        "interface": false,
-        "namespace": true,
-        "typeAlias": false,
-        "typeParameter": false,
-        "underscore": false
-      }
-    ],
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
-        ]
-      }
-    ],
-    "variable-name": {
-      "options": [
-        "ban-keywords",
-        "check-format",
-        "allow-leading-underscore",
-        "allow-pascal-case"
-      ]
-    },
-    "no-consecutive-blank-lines": false
+    "prettier": true
   }
 }

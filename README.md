@@ -1,29 +1,50 @@
-# my-blog
+## Gatsby 2 Power blog starter with Typescript
+More features are coming, stay tuned! 
 
-## Project setup
-```
-npm install
-```
+## Success Stories:
+- I am using this template for my website https://www.majidhajian.com
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Description
+This is a standard starter with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), Sass, StyleComponent, PWA
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#### Desktop
+<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop.png">
 
-### Run your tests
+#### Mobile
+<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/mobile.png" width="300px">
+
+### new project
 ```
-npm run test
+gatsby new my_blog https://github.com/mhadaily/gatsby-starter-typescript-power-blog
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Keywords
+  - PWA
+  - Blog
+  - Personal website
+  - TypeScript
+  - TSLint
+  - Progressive web app
+  - StyleLint
+  - Prettier
+  - Lint-Staged
+  - Styling:SCSS
+  - Prisim.js
+  - Style Components
+  - Markdown
+  - Pagination
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Features
+  - Mobile-First approach in development.
+  - TSLint & Prettier
+  - Offline support
+  - Category and Tag for post
+  - Type Safe by TypeScript
+  - Format Safe by TSLint, StyleLint and Prettier with Lint-Staged(Husky)
+  - Blog page
+  - Syntax highlighting in code blocks.
+  - Pagination Ready
+  - Ready to deploy to Github pages
+  - Automatic RSS generation.
+  - Automatic Sitemap generation.
+  - Automatic support for Google Tag Manager

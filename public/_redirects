@@ -1,7 +1,0 @@
-/*    /index.html   200
-
-
-＃如果您更改网站的自定义域或HTTPS设置，则这些规则将更改
-
-＃将默认的Netlify子域重定向到主域
-https://demosee.netlify.com/* https://xielanglang.cn/:splat 301！
