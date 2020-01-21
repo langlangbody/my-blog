@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Layout, Article, Wrapper, SectionTitle, Header, Content, Pagination } from '../components';
+import { Article } from '../components/Article';
+import { RootLayout } from '../Layout';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import Data from '../models/Data';
@@ -15,35 +16,27 @@ interface Props {
 
 export default class BlogPage extends React.Component<Props> {
   public render() {
-    const { currentPage, totalPages } = this.props.pageContext;
-
     const { data } = this.props;
     const { edges, totalCount } = data.allMarkdownRemark;
 
     return (
-      <Layout>
+      <RootLayout>
         <Helmet title={`Blog | ${config.siteTitle}`} />
-        <Header>
-          <Link to="/">{config.siteTitle}</Link>
-          <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
-        </Header>
-        <Wrapper>
-          <Content>
-            {edges.map(post => (
-              <Article
-                title={post.node.frontmatter.title}
-                date={post.node.frontmatter.date}
-                excerpt={post.node.excerpt}
-                timeToRead={post.node.timeToRead}
-                slug={post.node.fields.slug}
-                category={post.node.frontmatter.category}
-                key={post.node.fields.slug}
-              />
-            ))}
-            <Pagination currentPage={currentPage} totalPages={totalPages} url={'blog'} />
-          </Content>
-        </Wrapper>
-      </Layout>
+        <p>{totalCount}</p>
+        <div>
+          {edges.map(post => (
+            <Article
+              title={post.node.frontmatter.title}
+              date={post.node.frontmatter.date}
+              excerpt={post.node.excerpt}
+              timeToRead={post.node.timeToRead}
+              slug={post.node.fields.slug}
+              category={post.node.frontmatter.category}
+              key={post.node.fields.slug}
+            />
+          ))}
+        </div>
+      </RootLayout>
     );
   }
 }

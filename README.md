@@ -1,50 +1,47 @@
-## Gatsby 2 Power blog starter with Typescript
-More features are coming, stay tuned! 
+### 部分配置使用方法简绍
 
-## Success Stories:
-- I am using this template for my website https://www.majidhajian.com
+#### SEO 部分 Helmet 控制
 
-### Description
-This is a standard starter with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), Sass, StyleComponent, PWA
+> title meta 可自定义配置
 
-#### Desktop
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop.png">
+Example：
 
-#### Mobile
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/mobile.png" width="300px">
-
-### new project
+```ts
+  <Helmet
+    title={'title'}
+    meta={[
+    { name: 'description', content: 'Sample' },
+    { name: 'keywords', content: 'sample, something' },
+    ]}
+  >
 ```
-gatsby new my_blog https://github.com/mhadaily/gatsby-starter-typescript-power-blog
+
+```ts
+import { navigate } from 'gatsby';
+
+navigate(`/reauth`, {
+  replace: true,
+});
 ```
+
+#### 路由控制
 
 ### Keywords
-  - PWA
-  - Blog
-  - Personal website
-  - TypeScript
-  - TSLint
-  - Progressive web app
-  - StyleLint
-  - Prettier
-  - Lint-Staged
-  - Styling:SCSS
-  - Prisim.js
-  - Style Components
-  - Markdown
-  - Pagination
 
-### Features
-  - Mobile-First approach in development.
-  - TSLint & Prettier
-  - Offline support
-  - Category and Tag for post
-  - Type Safe by TypeScript
-  - Format Safe by TSLint, StyleLint and Prettier with Lint-Staged(Husky)
-  - Blog page
-  - Syntax highlighting in code blocks.
-  - Pagination Ready
-  - Ready to deploy to Github pages
-  - Automatic RSS generation.
-  - Automatic Sitemap generation.
-  - Automatic support for Google Tag Manager
+- PWA
+- Blog
+- Personal website
+- TypeScript
+- TSLint
+- Progressive web app
+- StyleLint
+- Prettier
+- Lint-Staged
+- Styling:SCSS
+- Prisim.js
+- Style Components
+- Markdown
+
+```
+
+```

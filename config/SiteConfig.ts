@@ -1,21 +1,16 @@
 export default {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
 
-  siteTitle: 'Typescript Power Blog', // Navigation and Site Title
-  siteTitleAlt: 'Typescript Power Blog - Gatsby Starter', // Alternative Site title for SEO
+  siteTitle: '工具站点', // Navigation and Site Title
+  siteTitleAlt: '工具类网站', // Alternative Site title for SEO
   siteUrl: 'https://xielanglang.cn', // Domain of your site. No trailing slash!
-  siteLanguage: 'en', // Language Tag on <html> element
+  siteLanguage: 'zh-CN', // Language Tag on <html> element
   siteBanner: '/assets/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   defaultBg: '/assets/bg.png', // default post background header
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
-  siteDescription: 'Typescript Power Blog with big typography', // Your site description
-  author: 'Majid Hajian', // Author for schemaORGJSONLD
+  siteDescription: '工具类站点，方便便捷是我们的宗旨', // Your site description
+  author: 'xielanglang', // Author for schemaORGJSONLD
   siteLogo: '/assets/logo.png', // Image for schemaORGJSONLD
-
-  // siteFBAppID: '123456789', // Facebook App ID - Optional
-  userTwitter: '@mhadaily', // Twitter Username - Optional
-  ogSiteName: 'mhadaily', // Facebook Site Name - Optional
-  ogLanguage: 'en_US', // Facebook Language
 
   // Manifest and Progress color
   // See: https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -31,6 +26,5 @@ export default {
   siteFBAppID: '',
 
   //
-  Google_Tag_Manager_ID: 'GTM-XXXXXXX',
   POST_PER_PAGE: 4,
 };

@@ -2,12 +2,18 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "esnext",
-    "jsx": "preserve",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "baseUrl": ".",
     "lib": [
       "dom",
       "es2015",
       "es2017"
     ],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "strict": true,
     "noEmit": true,
     "isolatedModules": true,

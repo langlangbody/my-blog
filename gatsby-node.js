@@ -156,3 +156,23 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 };
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+  // Make the front page match everything client side.
+  // Normally your paths should be a bit more judicious.
+  if (page.path === `/`) {
+    page.matchPath = `/*`
+    createPage(page)
+  }
+}
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: 'babel-plugin-import',
+    options: {
+      libraryName: 'antd',
+      style: true
+    }
+  })
+}

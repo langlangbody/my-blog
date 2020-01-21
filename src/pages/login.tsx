@@ -3,12 +3,12 @@ import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import {RootLayout} from '../Layout'
 
-export default class NotFoundPage extends React.Component<any> {
+export default class LoginPage extends React.Component<any> {
   public render() {
     return (
       <RootLayout>
-        <Helmet title={`404 not found | ${config.siteTitle}`} />
-        <div>about</div>
+        <Helmet title={`login | ${config.siteTitle}`} />
+        <div>登录页</div>
       </RootLayout>
     );
   }

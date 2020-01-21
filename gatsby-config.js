@@ -1,3 +1,5 @@
+const path = require('path')
+
 require('source-map-support').install();
 require('ts-node').register({
   compilerOptions: {
@@ -23,7 +25,40 @@ module.exports = {
     'gatsby-plugin-manifest',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
+    'gatsby-transformer-json',
     'gatsby-plugin-lodash',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-20HZVHK05R",
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-antd',
+      options: {
+        style: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        javascriptEnabled: true,
+        modifyVars: require('./src/style/theme').default,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/src/data`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        '@': path.join(__dirname, 'src/')
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -56,12 +91,13 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography.ts',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-typography',
+    //   options: {
+    //     pathToConfigModule: 'src/utils/typography.ts',
+    //   },
+    // },
+
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -75,5 +111,5 @@ module.exports = {
         icon: config.favicon,
       },
     },
-  ]
+  ],
 };

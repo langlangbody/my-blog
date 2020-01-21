@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import PageProps from '../models/PageProps';
-import { Article, Content, Header, Layout, SectionTitle, Subline, Wrapper } from '../components';
+import { Article } from '../components/Article';
+import { RootLayout } from '../Layout';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import kebabCase from 'lodash/kebabCase';
@@ -13,33 +14,25 @@ export default class TagTemplate extends React.PureComponent<PageProps> {
     const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tagName}"`;
 
     return (
-      <Layout>
+      <RootLayout>
         <Helmet title={`${'Tags'} | ${config.siteTitle}`} />
-        <Header>
-          <Link to="/">{config.siteTitle}</Link>
-          <SectionTitle>Tag &ndash; {tagName}</SectionTitle>
-          <Subline sectionTitle light={true}>
-            {subline} (See <Link to="/tags">all tags</Link>)
-          </Subline>
-        </Header>
-        <Wrapper>
-          <Content>
-            {posts
-              ? posts.map((post: any, index) => (
-                  <Article
-                    title={post.frontmatter.title}
-                    date={post.frontmatter.date}
-                    excerpt={post.excerpt}
-                    slug={kebabCase(post.frontmatter.title)}
-                    timeToRead={post.timeToRead}
-                    category={post.frontmatter.category}
-                    key={index}
-                  />
-                ))
-              : null}
-          </Content>
-        </Wrapper>
-      </Layout>
+        <p>{subline}</p>
+        <div>
+          {posts
+            ? posts.map((post: any, index) => (
+                <Article
+                  title={post.frontmatter.title}
+                  date={post.frontmatter.date}
+                  excerpt={post.excerpt}
+                  slug={kebabCase(post.frontmatter.title)}
+                  timeToRead={post.timeToRead}
+                  category={post.frontmatter.category}
+                  key={index}
+                />
+              ))
+            : null}
+        </div>
+      </RootLayout>
     );
   }
 }
