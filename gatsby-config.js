@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 require('source-map-support').install();
 require('ts-node').register({
@@ -15,8 +15,16 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
+    includeInDevelopment: false,
+    defaultDataLayer: { platform: 'gatsby' },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'G-20HZVHK05R',
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
@@ -27,12 +35,7 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-transformer-json',
     'gatsby-plugin-lodash',
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "G-20HZVHK05R",
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-antd',
       options: {
@@ -56,8 +59,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
-        '@': path.join(__dirname, 'src/')
-      }
+        '@': path.join(__dirname, 'src/'),
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',

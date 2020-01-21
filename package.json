@@ -82,10 +82,11 @@
     "gatsby-cli": "^2.8.27",
     "gatsby-plugin-antd": "^2.1.0",
     "gatsby-plugin-google-analytics": "^2.1.33",
-    "gatsby-plugin-google-tagmanager": "^2.1.17",
+    "gatsby-plugin-google-tagmanager": "^2.1.24",
     "gatsby-plugin-less": "^3.0.15",
     "gatsby-plugin-page-transitions": "^1.0.8",
     "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-source-google-analytics-reporting-api": "^1.0.2",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "webpack-hot-middleware": "^2.25.0"
