@@ -11,7 +11,7 @@ const asyncrouter = [
       title: 'about',
       icon: 'actives',
     },
-    component: () => import('@/components/about').then(module => module),
+    component: () => import('@/components/About').then(module => module),
   },
 ];
 
