@@ -48,7 +48,7 @@
     "gatsby-transformer-remark": "^2.6.37",
     "gh-pages": "^2.1.1",
     "lint-staged": "^9.4.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mobx": "^5.15.0",
     "mobx-react": "^6.1.4",
     "node-sass": "^4.13.0",
